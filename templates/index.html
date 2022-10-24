@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <p class="titulo">Lorem Ipsum</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac nibh libero. Nulla non urna vitae justo
+        auctor ornare. Duis consequat sapien tincidunt mi blandit scelerisque. Duis vitae dolor at justo porta
+        tempus. Donec in egestas ex. Sed maximus arcu a mi sodales, ac semper tellus tempor. Nam non eleifend
+        nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac nibh libero. Nulla non urna
+        vitae justo
+        auctor ornare. Duis consequat sapien tincidunt mi blandit scelerisque. Duis vitae dolor at justo porta
+        tempus. Donec in egestas ex. Sed maximus arcu a mi sodales, ac semper tellus tempor. Nam non eleifend
+        nisl. </p>
+</div>
+
+
+<div class="row">
+    {% for post in posts %}
+    <div class="col-sm-4">
+        <div class="thumbnail">
+            <img src="{{ post['link_imagem'] }}" alt="" class="img-thumb">
+            <a href="{{ url_for('post', post_id=post['id']) }}">
+                <h3>{{ post['titulo'] }}</h3>
+            </a>
+            <p>{{ post['frase'] }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    img {
+        height: 350px;
+        width: 200px;
+        margin: 0;
+    }
+
+    .thumbnail h3, p{
+        text-align: center;
+    }
+
+    .thumbnail {
+        width: 300px;
+        height: 400px;
+        margin: 0 auto;
+    }
+
+    .col-sm-4 {
+        margin: 15px auto;
+    }
+
+    .titulo {
+        font-size: 40px !important;
+    }
+
+    .jumbotron {
+        background-color: #f7cae4;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    }
+</style>
+{% endblock %}

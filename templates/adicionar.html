@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="post">
+    <div class="form-group">
+        <label for="titulo">Título</label>
+        <input required type="text" name="titulo" placeholder="Título do livro" class="form-control"
+            value="{{ request.form['titulo'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="frase">Frase</label>
+        <input required type="text" name="frase" placeholder="Alguma frase marcante..." class="form-control"
+            value="{{ request.form['frase'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="link_imagem">Link da imagem</label>
+        <input required type="text" name="link_imagem" placeholder="Link da imagem" class="form-control"
+            value="{{ request.form['link_imagem'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="conteudo">Conteúdo</label>
+        <textarea name="conteudo" placeholder="Conteúdo do post"
+            class="form-control">{{ request.form['conteudo'] }}</textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Criar post</button>
+    </div>
+</form>
+<style>
+    label {
+        font-size: 20px;
+        font-weight: 100;
+    }
+    .btn{
+        border: none;
+        background-color: #f868ba;
+        color: white;
+    }
+
+    .btn:hover{
+        background-color: #f891cd;
+    }
+</style>
+{% endblock %}

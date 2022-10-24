@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Blog Flask</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ url_for('index') }}">Blog Flask</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('adicionar') }}">Adicionar Post</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+
+</html>
+
+<style>
+    a:hover {
+        color: black !important;
+    }
+
+    .active a:hover {
+        color: white !important;
+    }
+
+    .active a {
+        background-color: #a788ab !important;
+    }
+
+    .navbar {
+        background-color: white;
+        border: none;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    .navbar-toggle{
+        border: none;
+        background-color: #a788ab !important; 
+    }
+
+    .navbar-brand{
+        background-color: #a788ab;
+        color: white !important;
+    }
+
+    .navbar-brand:hover{
+        background-color: #a562ad !important;
+        color: white !important;
+    }
+
+    #myNavbar{
+        border-color: #a788ab;
+    }
+</style>
