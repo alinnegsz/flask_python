@@ -33,17 +33,15 @@ def post(post_id):
 def adicionar():
     if request.method == 'POST':
         titulo = request.form['titulo']
+        autor = request.form['autor']
         frase = request.form['frase']
         link_imagem = request.form['link_imagem']
         conteudo = request.form['conteudo']
 
-        if not titulo:
-            flash('Insira um título')
-        else:
-            conexao = get_db_connection()
-            conexao.execute('INSERT INTO posts (titulo, conteudo, frase, link_imagem) VALUES (?, ?, ?, ?)', (titulo, conteudo, frase, link_imagem))
-            conexao.commit()
-            conexao.close()
-            return redirect(url_for('index'))
+        conexao = get_db_connection()
+        conexao.execute('INSERT INTO posts (titulo, conteudo, frase, link_imagem, autor) VALUES (?, ?, ?, ?, ?)', (titulo, conteudo, frase, link_imagem, autor))
+        conexao.commit()
+        conexao.close()
+        return redirect(url_for('index'))
             
     return render_template('adicionar.html')   

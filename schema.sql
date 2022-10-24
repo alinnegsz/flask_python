@@ -4,6 +4,7 @@ CREATE TABLE posts (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     data_postagem TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     titulo TEXT NOT NULL,
+    autor TEXT NOT NULL,
     conteudo TEXT NOT NULL,
     frase TEXT NOT NULL,
     link_imagem TEXT NOT NULL

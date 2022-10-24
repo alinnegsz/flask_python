@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="jumbotron">
-    <p class="titulo">Lorem Ipsum</p>
+    <p class="titulo">Bem-vindo(a) ao blog</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac nibh libero. Nulla non urna vitae justo
         auctor ornare. Duis consequat sapien tincidunt mi blandit scelerisque. Duis vitae dolor at justo porta
         tempus. Donec in egestas ex. Sed maximus arcu a mi sodales, ac semper tellus tempor. Nam non eleifend
@@ -22,7 +22,7 @@
             <a href="{{ url_for('post', post_id=post['id']) }}">
                 <h3>{{ post['titulo'] }}</h3>
             </a>
-            <p>{{ post['frase'] }}</p>
+            <p>"{{ post['frase'] }}"</p>
         </div>
     </div>
     {% endfor %}
@@ -44,12 +44,13 @@
 
     .thumbnail {
         width: 300px;
-        height: 400px;
+        height: 100%;
         margin: 0 auto;
     }
 
     .col-sm-4 {
         margin: 15px auto;
+        height: 100%;
     }
 
     .titulo {
@@ -59,6 +60,10 @@
     .jumbotron {
         background-color: #f7cae4;
         box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    }
+
+    .jumbotron p{
+        text-align: justify !important;
     }
 </style>
 {% endblock %}
